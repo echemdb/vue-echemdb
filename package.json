@@ -3,13 +3,13 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "serve": "vue-cli-service serve demo/main.ts",
-    "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
-    "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
-    "build:es:dev": "cross-env NODE_ENV=development rollup --config build/rollup.config.js --format es",
-    "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
-    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
-    "test": "yarn mochapack --recursive --require test/jsdom.mock.js --webpack-config node_modules/@vue/cli-service/webpack.config.js 'test/**/*.test.ts'"
+    "serve": "NODE_OPTIONS=--openssl-legacy-provider vue-cli-service serve demo/main.ts",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider cross-env NODE_ENV=production rollup --config build/rollup.config.js",
+    "build:es": "NODE_OPTIONS=--openssl-legacy-provide rcross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
+    "build:es:dev": "NODE_OPTIONS=--openssl-legacy-provider cross-env NODE_ENV=development rollup --config build/rollup.config.js --format es",
+    "build:ssr": "NODE_OPTIONS=--openssl-legacy-provider cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
+    "build:unpkg": "NODE_OPTIONS=--openssl-legacy-provider cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
+    "test": "NODE_OPTIONS=--openssl-legacy-provider yarn mochapack --recursive --require test/jsdom.mock.js --webpack-config node_modules/@vue/cli-service/webpack.config.js 'test/**/*.test.ts'"
   },
   "main": "dist/vue-echemdb.ssr.js",
   "module": "dist/vue-echemdb.esm.js",
@@ -24,6 +24,7 @@
     "@flatten-js/core": "^1.2.24",
     "axios": "^0.27.2",
     "lodash-es": "^4.17.15",
+    "papaparse": "^5.3.2",
     "vue-remote-component": "^1.4.1"
   },
   "devDependencies": {
@@ -39,6 +40,7 @@
     "@types/chai-as-promised": "^7.1.4",
     "@types/lodash-es": "^4.17.3",
     "@types/mocha": "^8.2.3",
+    "@types/papaparse": "^5.3.2",
     "@types/resize-observer-browser": "^0.1.6",
     "@types/sinon": "^10.0.2",
     "@vue/cli-plugin-router": "~4.5.0",
